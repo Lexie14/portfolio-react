@@ -13,7 +13,7 @@ class Projects extends Component {
   render() {
     const projects = this.props.items.map(item => {
       return (
-        <div key={item.title} className="col-md-6 col-lg-4 my-4">
+        <div key={item.title} className="col-md-6 col-lg-4 my-3 mx-auto">
           <div className="card">
             <img
               src={item.src}
@@ -25,6 +25,7 @@ class Projects extends Component {
               <a
                 href={item.url}
                 target="_blank"
+                rel="noopener noreferrer"
                 className="btn text-uppercase d-block mx-auto mt-2"
               >
                 View
@@ -35,13 +36,13 @@ class Projects extends Component {
                 if (it[0] === ".") {
                   let img_src = images(`${it}`);
                   return (
-                    <div>
-                      <img src={img_src} alt="" className="skill-icon" />
+                    <div key={it}>
+                      <img src={img_src} alt={img_src} className="skill-icon" />
                     </div>
                   );
                 } else
                   return (
-                    <div>
+                    <div key={it}>
                       <FontAwesomeIcon icon={["fab", it]} size="2x" />
                     </div>
                   );
@@ -54,14 +55,14 @@ class Projects extends Component {
 
     return (
       <section id="projects">
-        <div className="container pb-5">
-          <div className="row">
-            <div className="col">
-              <h2 className="text-center text-uppercase mt-4">projects</h2>
-              <div className="projects-underline bg-danger" />
-            </div>
+        <div className="container">
+          <div className="col pt-4">
+            <h2 className="text-center text-uppercase">projects</h2>
+            <div className="projects-underline bg-danger" />
           </div>
-          <div className="row">{projects}</div>
+          <div className="col">
+            <div className="row">{projects}</div>
+          </div>
         </div>
       </section>
     );

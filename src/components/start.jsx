@@ -1,6 +1,8 @@
 import React, { Component } from "react";
-import { FaReact } from "react-icons/fa";
-import { FaJs } from "react-icons/fa";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { fab } from "@fortawesome/free-brands-svg-icons";
+
 import { FaQuoteLeft } from "react-icons/fa";
 import {
   Collapse,
@@ -12,6 +14,10 @@ import {
   NavLink
 } from "reactstrap";
 import "../App.css";
+
+library.add(fab);
+
+var images = require.context("../img", true);
 
 class Start extends Component {
   constructor(props) {
@@ -28,6 +34,24 @@ class Start extends Component {
   };
 
   render() {
+    const skills = this.props.skills.map(skill => {
+      if (skill.icon[0] === ".") {
+        let img_src = images(`${skill.icon}`);
+        return (
+          <div key={skill.title} className="col-4 col-md-2">
+            <img src={img_src} alt={img_src} className="icon" />
+            <h4>{skill.title}</h4>
+          </div>
+        );
+      } else
+        return (
+          <div key={skill.title} className="col-4 col-md-2">
+            <FontAwesomeIcon icon={["fab", skill.icon]} size="5x" />
+            <h4>{skill.title}</h4>
+          </div>
+        );
+    });
+
     return (
       <section id="start" className="container-fluid">
         {/* navbar */}
@@ -58,50 +82,29 @@ class Start extends Component {
         </Navbar>
         {/* end of navbar */}
         {/* blockquote */}
-        <div className="row mr-3 align-items-end justify-content-end my-5 blockquote-height">
-          <blockquote>
-            <p>
-              <FaQuoteLeft className="fa-1x mr-3" />
-              <span className="quote">
-                Coding is my art of self-expression . . .
-              </span>
-            </p>
-          </blockquote>
+        <div className="col">
+          <div className="col my-5 blockquote-height">
+            <blockquote className="blockquote text-right">
+              <p>
+                <FaQuoteLeft className="fa-1x mr-3 quote-icon" />
+                <span className="quote">
+                  Coding is my art of self-expression . . .
+                </span>
+              </p>
+            </blockquote>
+          </div>
         </div>
         {/* end of blockquote */}
         {/* skills */}
-        <div className="d-flex flex-column text-center skills-height justify-content-end pb-5 mx-auto">
+        <div className="col d-flex flex-column text-center skills-height justify-content-end pb-5 mx-auto">
           <div className="row mb-3">
             <div className="col mt-4 align-self-center">
               <h2 className="text-center text-uppercase">skills</h2>
-              <div className="skills-underline bg-danger " />
+              <div className="skills-underline bg-danger" />
             </div>
           </div>
           <div className="row mb-3 text-center justify-content-around">
-            <div className="col-4 col-md-2">
-              <i className="fa fa-html5 fa-5x" />
-              <h4>HTML5</h4>
-            </div>
-            <div className="col-4 col-md-2">
-              <i className="fa fa-css3 fa-5x" />
-              <h4>CSS3</h4>
-            </div>
-            <div className="col-4 col-md-2">
-              <FaJs className="fa-5x" />
-              <h4>JavaScript</h4>
-            </div>
-            <div className="col-4 col-md-2">
-              <img src={require("../img/jquery.png")} className="icon" />
-              <h4>jQuery</h4>
-            </div>
-            <div className="col-4 col-md-2">
-              <FaReact className="fa-5x" />
-              <h4>ReactJs</h4>
-            </div>
-            <div className="col-4 col-md-2">
-              <img src={require("../img/bootstrap.png")} className="icon" />
-              <h4>Bootstrap</h4>
-            </div>
+            {skills}
           </div>
         </div>
         {/* end of skills */}

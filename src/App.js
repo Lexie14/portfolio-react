@@ -17,7 +17,7 @@ class App extends Component {
         src: require("./img/portfolio.png"),
         title: "Portfolio Website",
         skills: ["html5", "css3", "react", "./bootstrap.png"],
-        url: ""
+        url: "https://github.com/Lexie14/portfolio-react"
       },
       {
         src: require("./img/neighborhood.png"),
@@ -55,12 +55,20 @@ class App extends Component {
         skills: ["html5", "css3", "js", "./jquery.png"],
         url: "https://github.com/Lexie14/pixel-art-maker"
       }
+    ],
+    skills: [
+      { icon: "html5", title: "HTML5" },
+      { icon: "css3", title: "CSS3" },
+      { icon: "js", title: "JavaScript" },
+      { icon: "./jquery.png", title: "jQuery" },
+      { icon: "react", title: "ReactJs" },
+      { icon: "./bootstrap.png", title: "Bootstrap" }
     ]
   };
   render() {
     return (
       <div>
-        <Start />
+        <Start skills={this.state.skills} />
         <About items={this.state.items} />
         <Projects items={this.state.items} />
       </div>
