@@ -31,7 +31,7 @@ body {
 }
 
 .blockquote-height {
-  min-height: 20vh;
+  min-height: 25vh;
 }
 
 .quote {
@@ -40,7 +40,7 @@ body {
 
 /* skills section */
 .skills-height {
-  height: 60vh;
+  height: 55vh;
 }
 
 .skills-underline {
@@ -172,7 +172,6 @@ body {
     font-size: 0.5rem;
   }
 
-  .quote,
   .fa-quote-left,
   h4 {
     font-size: 1rem !important;

@@ -1,0 +1,61 @@
+{
+  "items": [
+    {
+      "src": "./tic-tac-toe.png",
+      "title": "Tic Tac Toe",
+      "skills": ["html5", "css3", "react"],
+      "url": "https: //github.com/Lexie14/tic-tac-toe"
+    },
+    {
+      "src": "./portfolio.png",
+      "title": "Portfolio Website",
+      "skills": ["html5", "css3", "react", "./bootstrap.png"],
+      "url": "https://github.com/Lexie14/portfolio-react"
+    },
+    {
+      "src": "./neighborhood.png",
+      "title": "Neighborhood Map",
+      "skills": ["html5", "css3", "react"],
+      "url": "https://github.com/Lexie14/Neighborhood-Map"
+    },
+    {
+      "src": "./reads.png",
+      "title": "My Reads",
+      "skills": ["html5", "css3", "react"],
+      "url": "https://github.com/Lexie14/reactnd-project-myreads-starter"
+    },
+    {
+      "src": "./reviews.jpg",
+      "title": "Restaurant Reviews",
+      "skills": ["html5", "css3", "react"],
+      "url": "https://github.com/Lexie14/restaurant-reviews"
+    },
+    {
+      "src": "./arcade-game.png",
+      "title": "Arcade Game",
+      "skills": ["html5", "css3", "js"],
+      "url": "https://github.com/Lexie14/arcade-game"
+    },
+    {
+      "src": "./memory-game.png",
+      "title": "Memory Game",
+      "skills": ["html5", "css3", "js"],
+      "url": "https://github.com/Lexie14/fend-project-memory-game"
+    },
+    {
+      "src": "./pixel-maker.png",
+      "title": "Pixel Art Maker",
+      "skills": ["html5", "css3", "js", "./jquery.png"],
+      "url": "https://github.com/Lexie14/pixel-art-maker"
+    }
+  ],
+
+  "skills": [
+    { "icon": "html5", "title": "HTML5" },
+    { "icon": "css3", "title": "CSS3" },
+    { "icon": "js", "title": "JavaScript" },
+    { "icon": "./jquery.png", "title": "jQuery" },
+    { "icon": "react", "title": "ReactJs" },
+    { "icon": "./bootstrap.png", "title": "Bootstrap" }
+  ]
+}

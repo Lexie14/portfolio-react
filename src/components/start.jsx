@@ -34,7 +34,7 @@ class Start extends Component {
   };
 
   render() {
-    const skills = this.props.skills.map(skill => {
+    const skills = this.props.projectsData.skills.map(skill => {
       if (skill.icon[0] === ".") {
         let img_src = images(`${skill.icon}`);
         return (
@@ -82,8 +82,8 @@ class Start extends Component {
         </Navbar>
         {/* end of navbar */}
         {/* blockquote */}
-        <div className="col">
-          <div className="col my-5 blockquote-height">
+        <div className="d-flex mt-5 blockquote-height align-items-end">
+          <div className="col">
             <blockquote className="blockquote text-right">
               <p>
                 <FaQuoteLeft className="fa-1x mr-3 quote-icon" />
@@ -96,7 +96,7 @@ class Start extends Component {
         </div>
         {/* end of blockquote */}
         {/* skills */}
-        <div className="col d-flex flex-column text-center skills-height justify-content-end pb-5 mx-auto">
+        <div className="col d-flex flex-column text-center skills-height justify-content-end pb-2">
           <div className="row mb-3">
             <div className="col mt-4 align-self-center">
               <h2 className="text-center text-uppercase">skills</h2>

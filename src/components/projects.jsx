@@ -11,12 +11,13 @@ class Projects extends Component {
   state = {};
 
   render() {
-    const projects = this.props.items.map(item => {
+    const projects = this.props.projectsData.items.map(item => {
+      let item_src = images(`${item.src}`);
       return (
         <div key={item.title} className="col-md-6 col-lg-4 my-3 mx-auto">
           <div className="card">
             <img
-              src={item.src}
+              src={item_src}
               alt={item.title}
               className="project card-img-top"
             />
@@ -32,18 +33,18 @@ class Projects extends Component {
               </a>
             </div>
             <div className="card-footer d-flex justify-content-around">
-              {item.skills.map(it => {
-                if (it[0] === ".") {
-                  let img_src = images(`${it}`);
+              {item.skills.map(skill => {
+                if (skill[0] === ".") {
+                  let img_src = images(`${skill}`);
                   return (
-                    <div key={it}>
+                    <div key={skill}>
                       <img src={img_src} alt={img_src} className="skill-icon" />
                     </div>
                   );
                 } else
                   return (
-                    <div key={it}>
-                      <FontAwesomeIcon icon={["fab", it]} size="2x" />
+                    <div key={skill}>
+                      <FontAwesomeIcon icon={["fab", skill]} size="2x" />
                     </div>
                   );
               })}
@@ -60,9 +61,7 @@ class Projects extends Component {
             <h2 className="text-center text-uppercase">projects</h2>
             <div className="projects-underline bg-danger" />
           </div>
-          <div className="col">
-            <div className="row">{projects}</div>
-          </div>
+          <div className="row">{projects}</div>
         </div>
       </section>
     );

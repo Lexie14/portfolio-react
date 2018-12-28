@@ -1,16 +1,7 @@
 import React, { Component } from "react";
 import { Carousel, CarouselItem, CarouselControl } from "reactstrap";
 
-// const items = [
-//   { src: require("../img/tic-tac-toe.png") },
-//   { src: require("../img/portfolio.png") },
-//   { src: require("../img/neighborhood.png") },
-//   { src: require("../img/reads.png") },
-//   { src: require("../img/reviews.jpg") },
-//   { src: require("../img/arcade-game.png") },
-//   { src: require("../img/memory-game.png") },
-//   { src: require("../img/pixel-maker.png") }
-// ];
+var images = require.context("../img", true);
 
 class About extends Component {
   constructor(props) {
@@ -22,7 +13,7 @@ class About extends Component {
 
   next = () => {
     const nextIndex =
-      this.state.activeIndex === this.props.items.length - 1
+      this.state.activeIndex === this.props.projectsData.items.length - 1
         ? 0
         : this.state.activeIndex + 1;
     this.setState({ activeIndex: nextIndex });
@@ -31,7 +22,7 @@ class About extends Component {
   previous = () => {
     const nextIndex =
       this.state.activeIndex === 0
-        ? this.props.items.length - 1
+        ? this.props.projectsData.items.length - 1
         : this.state.activeIndex - 1;
     this.setState({ activeIndex: nextIndex });
   };
@@ -39,10 +30,11 @@ class About extends Component {
   render() {
     const { activeIndex } = this.state;
 
-    const slides = this.props.items.map(item => {
+    const slides = this.props.projectsData.items.map(item => {
+      const img_src = images(`${item.src}`);
       return (
         <CarouselItem key={item.src}>
-          <img src={item.src} alt={item.src} className="w-100" />
+          <img src={img_src} alt={item.src} className="w-100" />
         </CarouselItem>
       );
     });
