@@ -77,6 +77,11 @@ class Start extends Component {
                   projects
                 </NavLink>
               </NavItem>
+              <NavItem>
+                <NavLink className="nav-item" href="#articles">
+                  articles
+                </NavLink>
+              </NavItem>
             </Nav>
           </Collapse>
         </Navbar>

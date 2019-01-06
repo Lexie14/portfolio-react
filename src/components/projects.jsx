@@ -8,8 +8,6 @@ library.add(fab);
 var images = require.context("../img", true);
 
 class Projects extends Component {
-  state = {};
-
   render() {
     const projects = this.props.projectsData.items.map(item => {
       let item_src = images(`${item.src}`);
@@ -56,7 +54,7 @@ class Projects extends Component {
 
     return (
       <section id="projects">
-        <div className="container">
+        <div className="container pb-5">
           <div className="col pt-4">
             <h2 className="text-center text-uppercase">projects</h2>
             <div className="projects-underline bg-danger" />
